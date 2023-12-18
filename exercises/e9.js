@@ -6,8 +6,26 @@
 
 export function getClientsWithBalanceOverOneHundred(array) {
   // Your code goes here...
+  var strArray = [];
 
-}
+  if(array[0] != undefined){
+    strArray[0] = array[0];
+  } else if (array == undefined ) {
+    return strArray;
+  };
+
+  for(var i = 0; i < array.length; i++) {
+    var accountBalanceFloat = parseFloat(array[i].balance);
+    if(accountBalanceFloat >= 101.00) {
+      strArray.push(array[i]);
+      continue;
+    } else if (accountBalanceFloat < 101.0){
+      continue;
+    }
+  }
+
+  return strArray;
+ }
 
 
 

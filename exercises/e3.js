@@ -10,7 +10,13 @@
 
 export function getAverage(array) {
   // Your code goes here...
-
+  let addUp = 0;
+  let del = 0;
+  for(let i = 0; i < array.length; i++) {
+    addUp += array[i];
+  } 
+  del = addUp / array.length;
+  return del;
 }
 
 
@@ -20,11 +26,17 @@ export function getAverage(array) {
  * Example1: getStringSum("GH2U87A") => 17
  * Example2: getStringSum("GHIUJUHSG") => 0
  * */ 
-
 export function getStringSum(str) {
   // Your code goes here...
-
-}
+      let counter = 0;
+      let stringArray = str.split('');
+      for(var i = 1; i <= str.length; i++) {
+          if(parseInt(str[i])){
+              counter += parseInt(str[i]);
+          }
+      }
+      return counter;
+    }
 
 
 // === TEST YOURSELF ===

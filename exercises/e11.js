@@ -6,7 +6,16 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-
+  var strArray = [];
+  for(var i = 0; i < array.length; i++) {
+    if(array[i].withdrawals == undefined) {
+      strArray[i] = 0;
+    } else {
+      strArray[i] = array[i].withdrawals.reduce((accu, curr) => { return accu + curr }, 0);
+    };
+  };
+  return strArray
+  ;
 }
 
 // === TEST YOURSELF ===

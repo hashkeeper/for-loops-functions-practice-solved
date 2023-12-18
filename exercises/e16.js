@@ -7,7 +7,12 @@
 
 export function flatArrays(array) {
   // Your code goes here...
+  let strArray = [];
 
+  for(let i = 0; i < array.length; i ++){
+    strArray = strArray.concat(array[i])
+  }
+  return strArray;
 }
 
 

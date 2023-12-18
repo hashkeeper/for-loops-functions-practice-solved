@@ -1,4 +1,5 @@
 
+
 // EXERCISE 15
 // Please, read the exercise-info/concat.md to get the initial data of what is the expected result of this exercise.
 // concatArrays(['d', 'r', 'a'], ['f', 'y']) => ['d', 'r', 'a', 'f', 'y']
@@ -6,7 +7,8 @@
 
 export function concatArrays(arr1, arr2) {
   // Your code goes here...
-
+    let arr3 = arr1.concat(arr2);
+    return arr3;
 }
 
 
