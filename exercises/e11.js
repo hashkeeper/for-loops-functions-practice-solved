@@ -6,20 +6,20 @@
 
 export function getAllWithdrawals(array) {
   // Your code goes here...
-  let strArray = [0.0, 0.0, 0.0, 0.0, 0.0];
-
+  let strArray = [];
 
   for(let i = 0; i < array.length; i++) {
     let withd = array[i].withdrawals;
+    let placeHold = 0.0;
     if(array[i].withdrawals == undefined) {
-      strArray[i] = 0.0;
+      strArray[i] += 0.0 ;
       continue;
     };
     for(let j = 0; j < withd.length; j++) {
-      strArray[i] = parseFloat(strArray[i]) + parseFloat(array[i].withdrawals[j]);
+      placeHold += array[i].withdrawals[j];
     };
+    strArray[i] += placeHold;
   };
-  console.log(strArray);
   return strArray;
 }
 
