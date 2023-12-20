@@ -9,9 +9,15 @@ export function flatArrays(array) {
   // Your code goes here...
   let strArray = [];
 
-  for(let i = 0; i < array.length; i ++){
-    strArray = strArray.concat(array[i])
-  }
+  for(let i = 0; i < array.length; i++) {
+    for(let j = 0; j < array[i].length; j++) {
+      if(array[i][j] === undefined){
+        strArray.push(array[i]);
+      } else {
+        strArray.push(array[i][j]);
+      }
+    };
+  };
   return strArray;
 }
 
