@@ -8,17 +8,17 @@ export function getAllWithdrawals(array) {
   // Your code goes here...
   let strArray = [];
 
-  for(let i = 0; i < array.length; i++) {
-    let withd = array[i].withdrawals;
-    let placeHold = 0.0;
-    if(array[i].withdrawals == undefined) {
-      strArray[i] += 0.0 ;
+  for(let user of array) {
+    let withdbal = 0;
+    if(user.withdrawals){
+      for(let withdrawal of user.withdrawals) {
+        withdbal += +withdrawal;
+      };
+    } else {
+      strArray.push(withdbal);
       continue;
     };
-    for(let j = 0; j < withd.length; j++) {
-      placeHold += array[i].withdrawals[j];
-    };
-    strArray[i] += placeHold;
+    strArray.push(withdbal);
   };
   return strArray;
 }
